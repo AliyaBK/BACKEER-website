@@ -1,0 +1,11 @@
+# Source documents and unlicensed stock imagery stay local
+*.pdf
+*.docx
+references/
+archive/
+
+# Tooling
+.impeccable/
+.claude/
+.netlify/
+node_modules/
