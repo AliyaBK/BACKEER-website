@@ -742,3 +742,22 @@ body:not(.menu-open) .header.on-video .menu-btn span::after { background: #fff; 
   .trust-row { grid-template-columns: 1fr; gap: 6px; }
   .trust-row .trust-k { padding-top: 14px; }
 }
+
+/* tighter hand-off from trust strip to the clinical need */
+.need.sec { padding-top: clamp(48px, 5.5vw, 80px); }
+
+/* trust strip: "Participated in" sits on its own line under the other two */
+.trust-grid { row-gap: 0; }
+.trust-part { grid-column: 1 / -1; border-top: 1px solid var(--line); margin-top: 6px; padding-top: 6px; }
+.trust-row + .trust-row.trust-part { border-left: 0; padding-left: 0; }
+
+/* clinical need: point titles in brand blue */
+.needs h3 { color: var(--cyan-ink); font-weight: 700; }
+
+/* header menu: bold, blue on hover and for the current section */
+.nav a { font-weight: 600; color: var(--ink); }
+.nav a:hover { color: var(--cyan-ink); background: transparent; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.nav a[aria-current="true"] { color: var(--cyan-ink); }
+body:not(.menu-open) .header.on-video .nav a { color: #fff; font-weight: 600; }
+body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background: transparent; }
+@media (max-width: 600px) { .trust .marquee-track.awards li { white-space: normal; min-height: 0; padding: 4px 0; } .trust .marquee-track { flex-wrap: wrap; } }
