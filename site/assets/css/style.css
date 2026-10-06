@@ -875,3 +875,13 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .apps.sec { padding-bottom: 20px; }
   .traction.sec { padding-top: 32px; }
 }
+
+/* phones: tighter hand-off from traction to publications */
+@media (max-width: 760px) {
+  .traction.sec { padding-bottom: 20px; }
+  .pubs.sec { padding-top: 28px; }
+}
+@media (max-width: 960px) {
+  .wins li:last-child { border-bottom: 0; padding-bottom: 6px; }
+  .wins-next { margin-top: 0; }
+}
