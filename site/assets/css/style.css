@@ -1025,3 +1025,6 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .fc-s3 { stop-opacity: 0.65; }
   .fiber-cursor.is-dark .fc-s2, .fiber-cursor.is-dark .fc-s3 { stop-opacity: 0.85; }
 }
+
+/* phones: frame the glowing scope screen in the new hero clip */
+@media (max-width: 760px) { .hero-video { object-position: 80% 50%; } }
