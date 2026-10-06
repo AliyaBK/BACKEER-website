@@ -914,3 +914,10 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .js .pub-panel.is-open { grid-template-rows: 1fr; }
 .js .pubs .sec-head.pubs-head { margin-bottom: 0; }
 .js .pubs.is-open .sec-head.pubs-head { margin-bottom: clamp(28px, 3.2vw, 48px); }
+
+/* phones: tighter hand-off from publications to contact */
+@media (max-width: 760px) {
+  .pubs.sec { padding-bottom: 8px; }
+  .contact { padding-top: 16px; }
+}
+@media (max-width: 760px) { .pubs.sec.is-open { padding-bottom: 28px; } }
