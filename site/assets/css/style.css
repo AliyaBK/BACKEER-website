@@ -965,3 +965,11 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
     100% { opacity: 0; transform: scale(2.7); }
   }
 }
+
+/* fiber cursor at 2x: SVG drawn at 48x60, tip centre (7,7)*2 = (14,14) stays the hotspot */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .fiber-cursor { transform: translate3d(calc(var(--x, -100px) - 14px), calc(var(--y, -100px) - 14px), 0); }
+}
+
+/* contact heading: same size as the other section headings */
+.contact h2 { font-size: clamp(34px, 4.2vw, 60px); max-width: 30ch; }
