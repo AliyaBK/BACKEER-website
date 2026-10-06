@@ -786,3 +786,8 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .trust .marquee-track { justify-content: flex-start; flex-direction: row; text-align: left; }
 .trust .marquee-track li { justify-content: flex-start; text-align: left; }
 @media (max-width: 600px) { .trust .marquee-track.awards li { flex: 1 1 100%; min-width: 0; } }
+
+/* trust strip: medal on every award, bullets on participations */
+.trust .marquee-track li .ti { width: 20px; height: 20px; color: var(--cyan-ink); flex: none; margin-right: 10px; }
+.trust .marquee-track.bullets li::before,
+.trust .marquee-track.bullets li + li::before { content: ""; display: block; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); margin-right: 12px; }
