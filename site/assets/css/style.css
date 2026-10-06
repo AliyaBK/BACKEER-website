@@ -1151,3 +1151,6 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .tm-stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .tm-stack .tm-item { display: flex; align-items: center; min-height: 28px; }
 @media (max-width: 760px) { .tm-stack .tm-item { min-height: 24px; } .tm-stack ul { gap: 4px; } }
+/* moving strip: faster */
+.tm-track { animation-duration: 30s; }
+@media (max-width: 760px) { .tm-track { animation-duration: 24s; } }
