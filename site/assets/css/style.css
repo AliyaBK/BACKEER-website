@@ -1101,3 +1101,9 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .hero .hero-copy .lede { margin-top: 10px; font-size: 16.5px; }
   .hero .hero-copy .sublede { margin: 8px 0 18px; font-size: 14px; }
 }
+/* phones: smaller hero type */
+@media (max-width: 760px) {
+  .hero .hero-copy h1 { font-size: clamp(31px, 8.6vw, 40px); }
+  .hero .hero-copy .lede { font-size: 15px; line-height: 1.42; }
+  .hero .hero-copy .sublede { font-size: 13px; }
+}
