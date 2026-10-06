@@ -846,3 +846,11 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 /* tighter hand-off from applications to traction */
 .apps.sec { padding-bottom: clamp(32px, 3.4vw, 48px); }
 .traction.sec { padding-top: clamp(36px, 3.6vw, 52px); }
+
+/* how it works: start content near the top so it follows the platform cards closely */
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  .zoom-sticky { align-items: start; padding-top: clamp(24px, 3vh, 40px); }
+}
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .zoom { padding: clamp(36px, 6vw, 56px) 0 clamp(40px, 6vw, 64px); }
+}
