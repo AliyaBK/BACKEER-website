@@ -1146,3 +1146,8 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .tm-group { flex-wrap: wrap; row-gap: 0; }
   .tm-group[aria-hidden] { display: none; }
 }
+/* moving strip: items within each group stacked */
+.tm-group li.tm-stack { min-height: 0; padding: 8px 0; }
+.tm-stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.tm-stack .tm-item { display: flex; align-items: center; min-height: 28px; }
+@media (max-width: 760px) { .tm-stack .tm-item { min-height: 24px; } .tm-stack ul { gap: 4px; } }
