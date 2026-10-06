@@ -1092,3 +1092,12 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .pof-visual { background: #e3e5ee; }
 .pof-frame .pf-photo { mix-blend-mode: multiply; }
 .pof-frame { background: #e3e5ee; }
+
+/* phones: text sits lower so the video reads above it */
+@media (max-width: 760px) {
+  .hero-stage { min-height: max(600px, calc(100svh - 48px)); padding-bottom: 18px; }
+  .hero-stage::after { background: linear-gradient(180deg, rgba(8, 14, 24, 0.45) 0%, rgba(8, 14, 24, 0.04) 16%, rgba(8, 14, 24, 0.08) 44%, rgba(8, 14, 24, 0.8) 60%, rgba(8, 14, 24, 0.94) 72%, rgba(8, 14, 24, 0.97) 100%); }
+  .hero .hero-copy h1 { font-size: clamp(38px, 10.4vw, 48px); }
+  .hero .hero-copy .lede { margin-top: 10px; font-size: 16.5px; }
+  .hero .hero-copy .sublede { margin: 8px 0 18px; font-size: 14px; }
+}
