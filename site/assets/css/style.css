@@ -834,3 +834,7 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 @media (min-width: 761px) {
   .hero-stage { min-height: max(540px, calc(100svh - 200px)); padding-bottom: 40px; }
 }
+
+/* tighter hand-off from traction to publications */
+.traction.sec { padding-bottom: clamp(32px, 3.4vw, 48px); }
+.pubs.sec { padding-top: clamp(32px, 3.4vw, 48px); }
