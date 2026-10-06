@@ -973,3 +973,24 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 
 /* contact heading: same size as the other section headings */
 .contact h2 { font-size: clamp(34px, 4.2vw, 60px); max-width: 30ch; }
+
+/* ===== Contact: dark closing band over a fiber image ===== */
+.contact { position: relative; isolation: isolate; overflow: hidden; background: #0b1424; color: #fff; padding-top: clamp(64px, 7vw, 112px); padding-bottom: clamp(64px, 7vw, 112px); }
+.contact::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("../img/contact-fibers.webp") 70% 50% / cover no-repeat; }
+.contact::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(8, 14, 24, 0.92) 0%, rgba(8, 14, 24, 0.78) 42%, rgba(8, 14, 24, 0.35) 75%, rgba(8, 14, 24, 0.2) 100%); }
+.contact h2 { color: #fff; }
+.contact-row .mail { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.35); }
+.contact-row .mail:hover { color: #8be6ff; border-color: #8be6ff; }
+.contact-row .mail-in svg { color: #8be6ff; }
+.contact ::selection { background: #fff; color: var(--navy); }
+@media (max-width: 760px) {
+  .contact { padding-top: 56px; padding-bottom: 56px; }
+  .contact::before { background-position: 62% 50%; }
+  .contact::after { background: linear-gradient(180deg, rgba(8, 14, 24, 0.86) 0%, rgba(8, 14, 24, 0.7) 100%); }
+}
+
+/* ===== Traction: fiber image instead of the SEM sphere ===== */
+.traction::before { background: url("../img/traction-fibers.webp") center / cover no-repeat; opacity: 0.55; mix-blend-mode: normal; }
+
+/* ===== Footer column headings in brand blue ===== */
+.foot h3 { color: var(--cyan-ink); font-weight: 600; }

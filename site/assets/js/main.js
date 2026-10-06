@@ -118,7 +118,7 @@
       fc.classList.toggle('is-link', link);
       if (link && !linkWas) { fc.classList.remove('ping'); void fc.getBoundingClientRect(); fc.classList.add('ping'); }
       linkWas = link;
-      fc.classList.toggle('is-dark', !!t.closest('.hero-stage, .traction, figure.dark, .header.on-video'));
+      fc.classList.toggle('is-dark', !!t.closest('.hero-stage, .traction, .contact, figure.dark, .header.on-video'));
     }, { passive: true });
     document.addEventListener('pointerleave', () => fc.classList.add('is-out'));
     addEventListener('blur', () => fc.classList.add('is-out'));
