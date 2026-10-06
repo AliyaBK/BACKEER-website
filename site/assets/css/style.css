@@ -670,7 +670,7 @@ p { margin: 0; text-wrap: pretty; }
   min-height: max(560px, calc(100svh - 92px));
   display: flex; align-items: center;
   padding: calc(var(--header-h) + 32px) 0 56px;
-  background: #0e1724 url("../img/hero-poster.webp") center / cover no-repeat;
+  background: #0e1724 url("../img/hero-poster.webp?v=3") center / cover no-repeat;
   color: #fff;
 }
 .hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
@@ -1154,3 +1154,6 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 /* moving strip: faster */
 .tm-track { animation-duration: 30s; }
 @media (max-width: 760px) { .tm-track { animation-duration: 24s; } }
+
+/* phones: portrait still while the video loads (the video tag has no poster, which some phones stretch) */
+@media (max-width: 760px) { .hero-stage { background-image: url("../img/hero-poster-mobile.webp"); background-position: center top; } }
