@@ -1088,3 +1088,7 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .pof-visual { background: #fff; }
 .pof-frame { left: 50%; aspect-ratio: 900 / 430; transform: translateX(-50%); }
 .p-sensor { transform: translateY(-50%); }
+/* POF card: same bench grey as the SMF photo; the drawing's white melts into it */
+.pof-visual { background: #e3e5ee; }
+.pof-frame .pf-photo { mix-blend-mode: multiply; }
+.pof-frame { background: #e3e5ee; }
