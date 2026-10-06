@@ -1027,7 +1027,7 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 }
 
 /* phones: frame the glowing scope screen in the new hero clip */
-@media (max-width: 760px) { .hero-video { object-position: 80% 50%; } }
+@media (max-width: 760px) { .hero-video { object-position: 60% 50%; } }
 
 /* ===== Two platforms: refined cards (compact, real media pair, technical notes) ===== */
 .tech-head > p:last-child { margin-top: 14px; font-size: clamp(16px, 1.25vw, 18px); }
