@@ -825,3 +825,7 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 /* Jas Ventures logo sized to match the NU / NLA lockup */
 .trust .marquee-track img[src*="logo-jas"] { height: 56px; }
 @media (max-width: 600px) { .trust .marquee-track img[src*="logo-jas"] { height: 48px; } }
+
+/* tighter hand-off from publications to contact */
+.pubs.sec { padding-bottom: clamp(28px, 3vw, 40px); }
+.contact { padding-top: clamp(32px, 3.2vw, 48px); }
