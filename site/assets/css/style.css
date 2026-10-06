@@ -715,3 +715,30 @@ body:not(.menu-open) .header.on-video .menu-btn span::after { background: #fff; 
   .hero .hero-copy .sublede { margin: 10px 0 22px; font-size: 14.5px; line-height: 1.45; }
   .hero .hero-copy .btn { min-height: 48px; }
 }
+
+/* phones: biomarkers become swipeable tabs above the chart */
+@media (max-width: 760px) {
+  .apps-grid { display: flex; flex-direction: column; gap: 16px; }
+  .markers { order: -2; display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 8px; scroll-snap-type: x mandatory; margin: 0 calc(var(--gutter) * -1); padding: 2px var(--gutter) 6px; scroll-padding-inline: var(--gutter); border-top: 0; scrollbar-width: none; }
+  .markers::-webkit-scrollbar { display: none; }
+  .app-card { order: -1; }
+  .marker { flex: none; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 11px 16px 12px; border: 1px solid var(--line-2); border-radius: 12px; background: #fff; scroll-snap-align: start; box-shadow: none; }
+  .marker::after { display: none; }
+  .marker .m { font-size: 18px; letter-spacing: -0.02em; }
+  .marker .c, .marker .s { font-size: 12.5px; padding: 0; border: 0; color: var(--meta); text-align: left; white-space: nowrap; }
+  .marker .c br, .marker .c em { display: none; }
+  .marker[aria-selected="true"] { background: var(--ink); border-color: var(--ink); }
+  .marker[aria-selected="true"] .m { color: #fff; }
+  .marker[aria-selected="true"] .c, .marker[aria-selected="true"] .s { color: rgba(255, 255, 255, 0.75); }
+  .app-fig img { aspect-ratio: auto; padding: 14px; }
+  .app-fig img.cover { aspect-ratio: 16 / 10; padding: 0; }
+  .apps-grid { min-width: 0; }
+  .apps-grid { align-items: stretch; }
+  .markers { min-width: 0; width: auto; max-width: none; align-self: stretch; }
+  .app-card { align-self: stretch; }
+  .apps .wrap { overflow-x: clip; }
+}
+@media (max-width: 600px) {
+  .trust-row { grid-template-columns: 1fr; gap: 6px; }
+  .trust-row .trust-k { padding-top: 14px; }
+}

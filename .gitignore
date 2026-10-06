@@ -9,3 +9,6 @@ archive/
 .claude/
 .netlify/
 node_modules/
+
+# Design previews
+mockups/

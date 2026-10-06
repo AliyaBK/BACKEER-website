@@ -157,6 +157,9 @@
   const select = i => {
     const b = markers[i];
     markers.forEach((m, k) => { m.setAttribute('aria-selected', k === i); m.tabIndex = k === i ? 0 : -1; });
+    // on phones the tabs scroll sideways: bring the chosen one into view
+    const row = b.parentElement;
+    if (row.scrollWidth > row.clientWidth) row.scrollTo({ left: b.offsetLeft - row.offsetLeft - 16, behavior: reduced ? 'auto' : 'smooth' });
     fig.classList.add('is-swapping'); card.classList.add('is-swapping');
     setTimeout(() => {
       figImg.src = b.dataset.img;
