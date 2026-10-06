@@ -838,3 +838,7 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 /* tighter hand-off from traction to publications */
 .traction.sec { padding-bottom: clamp(32px, 3.4vw, 48px); }
 .pubs.sec { padding-top: clamp(32px, 3.4vw, 48px); }
+
+/* tighter hand-off from cost to applications */
+.cost.sec { padding-bottom: clamp(32px, 3.4vw, 48px); }
+.apps.sec { padding-top: clamp(32px, 3.4vw, 48px); }
