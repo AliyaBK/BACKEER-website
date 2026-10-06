@@ -894,3 +894,9 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 
 /* upcoming milestones: three blue dots instead of a dash */
 .wins-next li::before { width: 28px; height: 6px; margin-bottom: 4px; background: radial-gradient(circle, var(--cyan) 2.6px, transparent 3.2px) 0 0 / 10px 6px repeat-x; }
+
+/* phones: tighter hand-off from technology to how it works */
+@media (max-width: 760px) {
+  .tech.sec { padding-bottom: 20px; }
+  .zoom { padding-top: 28px; }
+}
