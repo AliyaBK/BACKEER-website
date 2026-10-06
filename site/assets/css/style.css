@@ -1156,4 +1156,4 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 @media (max-width: 760px) { .tm-track { animation-duration: 24s; } }
 
 /* phones: portrait still while the video loads (the video tag has no poster, which some phones stretch) */
-@media (max-width: 760px) { .hero-stage { background-image: url("../img/hero-poster-mobile.webp"); background-position: center top; } }
+@media (max-width: 760px) { .hero-stage { background-image: url("../img/hero-poster-mobile.webp?v=2"); background-position: center top; } }
