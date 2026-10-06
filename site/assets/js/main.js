@@ -7,9 +7,25 @@
 
   /* ---------- Header ---------- */
   const header = $('.header');
-  const onScrollHeader = () => header.classList.toggle('is-scrolled', scrollY > 8);
+  const heroStage = $('.hero-stage');
+  const onScrollHeader = () => {
+    header.classList.toggle('is-scrolled', scrollY > 8);
+    if (heroStage) header.classList.toggle('on-video', scrollY < heroStage.offsetHeight - header.offsetHeight);
+  };
   addEventListener('scroll', onScrollHeader, { passive: true });
+  addEventListener('resize', onScrollHeader, { passive: true });
   onScrollHeader();
+
+  /* ---------- Hero video: respect reduced motion, pause off-screen ---------- */
+  const heroVideo = $('.hero-video');
+  if (heroVideo) {
+    if (reduced) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
+    else {
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) heroVideo.play().catch(() => {}); else heroVideo.pause();
+      }).observe(heroVideo);
+    }
+  }
 
   const menuBtn = $('.menu-btn');
   menuBtn.addEventListener('click', () => {

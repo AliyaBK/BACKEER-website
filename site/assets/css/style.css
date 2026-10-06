@@ -662,3 +662,45 @@ p { margin: 0; text-wrap: pretty; }
 @media (min-width: 961px) { .wins-next li:nth-child(3) { border-right: 1px solid rgba(232, 238, 245, 0.16); } }
 .contact-row .mail-in { display: inline-flex; align-items: center; gap: 10px; }
 .contact-row .mail-in svg { width: 20px; height: 20px; color: #0a66c2; }
+
+/* ---------- Hero: full-bleed video ---------- */
+.hero { padding-top: 0; min-height: 0; }
+.hero-stage {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: max(560px, calc(100svh - 92px));
+  display: flex; align-items: center;
+  padding: calc(var(--header-h) + 32px) 0 56px;
+  background: #0e1724 url("../img/hero-poster.webp") center / cover no-repeat;
+  color: #fff;
+}
+.hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
+.hero-stage::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(8, 14, 24, 0.86) 0%, rgba(8, 14, 24, 0.62) 38%, rgba(8, 14, 24, 0.12) 72%, rgba(8, 14, 24, 0) 100%),
+    linear-gradient(180deg, rgba(8, 14, 24, 0.55) 0%, rgba(8, 14, 24, 0) 26%, rgba(8, 14, 24, 0) 70%, rgba(8, 14, 24, 0.5) 100%);
+}
+.hero-copy { width: 100%; }
+.hero-copy > * { max-width: 640px; }
+.hero .hero-copy h1 { color: #fff; }
+.hero .hero-copy .lede { color: rgba(255, 255, 255, 0.92); }
+.hero .hero-copy .sublede { color: rgba(255, 255, 255, 0.72); }
+.hero .trust { margin-top: 0; border-top: 0; }
+@media (max-width: 900px) {
+  .hero-stage { min-height: 86svh; }
+  .hero-video { object-position: 70% center; }
+  .hero-stage::after { background: linear-gradient(180deg, rgba(8, 14, 24, 0.6) 0%, rgba(8, 14, 24, 0.55) 45%, rgba(8, 14, 24, 0.82) 100%); }
+}
+
+/* header sits transparent while over the hero video */
+body:not(.menu-open) .header.on-video { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom-color: rgba(255, 255, 255, 0.14); }
+body:not(.menu-open) .header.on-video .brand,
+body:not(.menu-open) .header.on-video .scale-unit { color: #fff; }
+body:not(.menu-open) .header.on-video .scale { color: rgba(255, 255, 255, 0.72); border-left-color: rgba(255, 255, 255, 0.24); }
+body:not(.menu-open) .header.on-video .nav a { color: rgba(255, 255, 255, 0.86); }
+body:not(.menu-open) .header.on-video .nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.1); }
+body:not(.menu-open) .header.on-video .menu-btn { border-color: rgba(255, 255, 255, 0.4); }
+body:not(.menu-open) .header.on-video .menu-btn span,
+body:not(.menu-open) .header.on-video .menu-btn span::before,
+body:not(.menu-open) .header.on-video .menu-btn span::after { background: #fff; }
+.header, .header .brand, .header .nav a { transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease); }
