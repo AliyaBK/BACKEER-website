@@ -660,3 +660,5 @@ p { margin: 0; text-wrap: pretty; }
 .wins-next li { padding-top: 22px; }
 .wins-next li::before { content: ""; width: 18px; height: 1.5px; background: var(--cyan); margin-bottom: 4px; }
 @media (min-width: 961px) { .wins-next li:nth-child(3) { border-right: 1px solid rgba(232, 238, 245, 0.16); } }
+.contact-row .mail-in { display: inline-flex; align-items: center; gap: 10px; }
+.contact-row .mail-in svg { width: 20px; height: 20px; color: #0a66c2; }
