@@ -954,3 +954,14 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .reticle { display: none !important; }
   .has-reticle, .has-reticle * { cursor: none; }
 }
+
+/* fiber cursor v2: big tip on top (hotspot), fiber trails down-right like an arrow cursor */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .fiber-cursor { transform: translate3d(calc(var(--x, -100px) - 7px), calc(var(--y, -100px) - 7px), 0); }
+  .fc-tip { stroke: rgba(255, 255, 255, 0.9); stroke-width: 1; }
+  .fiber-cursor.is-link .fc-tip { transform: scale(1.22); }
+  @keyframes fc-ping {
+    0% { opacity: 0.75; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2.7); }
+  }
+}

@@ -101,7 +101,7 @@
       raf = 0;
       bend += (target - bend) * 0.25;           // ease the bend back to straight
       target *= 0.6;
-      fiber.setAttribute("d", `M2.5 5.6 Q10 ${(8.4 + bend).toFixed(2)} 17.5 10`);
+      fiber.setAttribute("d", `M9 12 Q${(11 + bend).toFixed(2)} 19.5 15 27`);
       if (Math.abs(bend) > 0.02 || Math.abs(target) > 0.02) raf = requestAnimationFrame(draw);
     };
     addEventListener('pointermove', e => {
@@ -109,7 +109,7 @@
       fc.style.setProperty('--x', x + 'px');
       fc.style.setProperty('--y', y + 'px');
       // very slight natural bend (max ~1.2px) from vertical movement
-      target = Math.max(-1.2, Math.min(1.2, (y - ly) * 0.08));
+      target = Math.max(-1.4, Math.min(1.4, -(x - lx) * 0.08));
       lx = x; ly = y;
       if (!raf) raf = requestAnimationFrame(draw);
       fc.classList.remove('is-out');
