@@ -1115,3 +1115,34 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 
 /* phones: a dedicated portrait cut (hero-mobile.mp4) is already framed — just fill */
 @media (max-width: 760px) { .hero-video { inset: 0; height: 100%; object-position: 50% 0%; } }
+
+/* ===== trust strip: one moving line (developed within · recognized by · participated in) ===== */
+.trust { padding: 8px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trust-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.tm-track { display: flex; width: max-content; animation: tm-scroll 48s linear infinite; }
+.trust-marquee:hover .tm-track { animation-play-state: paused; }
+.tm-group { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 30px; padding-right: 30px; flex: none; }
+.tm-group li { flex: none; display: flex; align-items: center; min-height: 64px; white-space: nowrap; }
+.tm-k { font: 400 11.5px/1 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--meta); }
+.tm-group img { height: 40px; width: auto; filter: grayscale(1) contrast(1.1); opacity: 0.78; transition: filter 0.4s var(--ease), opacity 0.4s var(--ease); }
+.tm-group img[src*="logo-jas"] { height: 52px; }
+.tm-group li:hover img { filter: none; opacity: 1; }
+.tm-item { gap: 10px; font-size: 16px; font-weight: 600; color: var(--ink); }
+.tm-item .ti { width: 22px; height: 22px; color: var(--cyan); flex: none; }
+.tm-dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); flex: none; }
+.tm-sep { width: 1px; min-height: 28px !important; height: 28px; background: var(--line-2); margin: 0 6px; }
+@keyframes tm-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 760px) {
+  .tm-track { animation-duration: 40s; }
+  .tm-group { gap: 22px; padding-right: 22px; }
+  .tm-group li { min-height: 52px; }
+  .tm-group img { height: 34px; }
+  .tm-group img[src*="logo-jas"] { height: 44px; }
+  .tm-item { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tm-track { animation: none; width: auto; }
+  .trust-marquee { -webkit-mask-image: none; mask-image: none; }
+  .tm-group { flex-wrap: wrap; row-gap: 0; }
+  .tm-group[aria-hidden] { display: none; }
+}
