@@ -797,3 +797,7 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .trust .marquee-track.bullets li { min-height: 36px; }
 .trust .marquee-track.bullets li::before,
 .trust .marquee-track.bullets li + li::before { position: static; left: auto; right: auto; top: auto; margin: 0 12px 0 0; transform: none; }
+
+/* recognized by: awards stacked like the participations */
+.trust .marquee-track.awards { flex-direction: column; align-items: flex-start; flex-wrap: nowrap; gap: 0; }
+.trust .marquee-track.awards li { min-height: 36px; }
