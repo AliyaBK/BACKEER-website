@@ -801,3 +801,11 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 /* recognized by: awards stacked like the participations */
 .trust .marquee-track.awards { flex-direction: column; align-items: flex-start; flex-wrap: nowrap; gap: 0; }
 .trust .marquee-track.awards li { min-height: 36px; }
+
+/* less gap between the platform cards and the zoom section */
+.tech.sec { padding-bottom: clamp(48px, 5vw, 72px); }
+
+/* zoom heading: one sentence per line */
+.zoom-copy h2.lines { max-width: none; font-size: clamp(32px, 4.1vw, 62px); }
+.zoom-copy h2.lines span { display: block; white-space: nowrap; }
+@media (max-width: 420px) { .zoom-copy h2.lines span { white-space: normal; } }
