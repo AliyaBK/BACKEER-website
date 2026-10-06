@@ -704,3 +704,14 @@ body:not(.menu-open) .header.on-video .menu-btn span,
 body:not(.menu-open) .header.on-video .menu-btn span::before,
 body:not(.menu-open) .header.on-video .menu-btn span::after { background: #fff; }
 .header, .header .brand, .header .nav a { transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease); }
+
+/* phones: copy sits low so the video is visible above it */
+@media (max-width: 760px) {
+  .hero-stage { min-height: 100svh; align-items: flex-end; padding: calc(var(--header-h) + 16px) 0 32px; }
+  .hero-video { object-position: 62% 40%; }
+  .hero-stage::after { background: linear-gradient(180deg, rgba(8, 14, 24, 0.45) 0%, rgba(8, 14, 24, 0.05) 18%, rgba(8, 14, 24, 0.05) 38%, rgba(8, 14, 24, 0.7) 58%, rgba(8, 14, 24, 0.92) 100%); }
+  .hero .hero-copy h1 { font-size: clamp(40px, 11vw, 52px); }
+  .hero .hero-copy .lede { margin-top: 14px; font-size: 17px; line-height: 1.4; }
+  .hero .hero-copy .sublede { margin: 10px 0 22px; font-size: 14.5px; line-height: 1.45; }
+  .hero .hero-copy .btn { min-height: 48px; }
+}
