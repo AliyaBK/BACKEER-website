@@ -854,3 +854,12 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 @media (max-width: 900px), (prefers-reduced-motion: reduce) {
   .zoom { padding: clamp(36px, 6vw, 56px) 0 clamp(40px, 6vw, 64px); }
 }
+
+/* how it works -> cost: panel fits its content, less padding before cost */
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  .zoom-sticky { height: auto; padding-bottom: clamp(16px, 2vh, 28px); }
+}
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .zoom { padding-bottom: clamp(24px, 4vw, 40px); }
+}
+.cost.sec { padding-top: clamp(32px, 3.4vw, 48px); }
