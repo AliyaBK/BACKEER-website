@@ -709,7 +709,7 @@ body:not(.menu-open) .header.on-video .menu-btn span::after { background: #fff; 
 @media (max-width: 760px) {
   .hero-stage { min-height: 100svh; align-items: flex-end; padding: calc(var(--header-h) + 16px) 0 32px; }
   .hero-video { object-position: 62% 40%; }
-  .hero-stage::after { background: linear-gradient(180deg, rgba(8, 14, 24, 0.45) 0%, rgba(8, 14, 24, 0.05) 18%, rgba(8, 14, 24, 0.05) 38%, rgba(8, 14, 24, 0.7) 58%, rgba(8, 14, 24, 0.92) 100%); }
+  .hero-stage::after { background: linear-gradient(180deg, rgba(8, 14, 24, 0.45) 0%, rgba(8, 14, 24, 0.05) 18%, rgba(8, 14, 24, 0.12) 34%, rgba(8, 14, 24, 0.78) 50%, rgba(8, 14, 24, 0.9) 62%, rgba(8, 14, 24, 0.96) 100%); }
   .hero .hero-copy h1 { font-size: clamp(40px, 11vw, 52px); }
   .hero .hero-copy .lede { margin-top: 14px; font-size: 17px; line-height: 1.4; }
   .hero .hero-copy .sublede { margin: 10px 0 22px; font-size: 14.5px; line-height: 1.45; }
