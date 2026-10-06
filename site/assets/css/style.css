@@ -885,3 +885,9 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .wins li:last-child { border-bottom: 0; padding-bottom: 6px; }
   .wins-next { margin-top: 0; }
 }
+
+/* phones: tighter hand-off from cost to applications */
+@media (max-width: 760px) {
+  .cost.sec { padding-bottom: 24px; }
+  .apps.sec { padding-top: 28px; }
+}
