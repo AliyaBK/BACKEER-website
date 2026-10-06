@@ -69,6 +69,22 @@
   }, { rootMargin: '-48% 0px -48% 0px' });
   scaled.forEach(el => scaleIO.observe(el));
 
+  /* ---------- Publications: Learn more toggle ---------- */
+  const pubsBtn = $('.pubs-toggle');
+  if (pubsBtn) {
+    const panel = $('#pub-panel'), sec = pubsBtn.closest('section'), lbl = $('.lbl', pubsBtn);
+    const links = () => $$('a', panel);
+    links().forEach(a => a.tabIndex = -1);
+    pubsBtn.addEventListener('click', () => {
+      const open = pubsBtn.getAttribute('aria-expanded') !== 'true';
+      pubsBtn.setAttribute('aria-expanded', open);
+      panel.classList.toggle('is-open', open);
+      sec.classList.toggle('is-open', open);
+      lbl.textContent = open ? 'Show less' : 'Learn more';
+      links().forEach(a => a.tabIndex = open ? 0 : -1);
+    });
+  }
+
   /* ---------- Reveal ---------- */
   const revealIO = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); revealIO.unobserve(e.target); } });

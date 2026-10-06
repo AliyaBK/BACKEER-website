@@ -900,3 +900,17 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .tech.sec { padding-bottom: 20px; }
   .zoom { padding-top: 28px; }
 }
+
+/* publications: collapsed behind "Learn more" */
+.pubs-head { align-items: end; }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-2); box-shadow: none; }
+.btn-ghost:hover { background: var(--cyan-wash); border-color: var(--cyan); }
+.pubs-toggle { justify-self: start; }
+.pubs-toggle svg { transform: rotate(90deg); transition: transform 0.35s var(--ease); }
+.pubs-toggle:hover svg { transform: rotate(90deg) translateX(2px); }
+.pubs-toggle[aria-expanded="true"] svg { transform: rotate(-90deg); }
+.js .pub-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s var(--ease); }
+.js .pub-panel > div { overflow: hidden; min-height: 0; }
+.js .pub-panel.is-open { grid-template-rows: 1fr; }
+.js .pubs .sec-head.pubs-head { margin-bottom: 0; }
+.js .pubs.is-open .sec-head.pubs-head { margin-bottom: clamp(28px, 3.2vw, 48px); }
