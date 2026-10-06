@@ -85,6 +85,14 @@
     });
   }
 
+  /* ---------- POF card video: play only while visible, never under reduced motion / data saver ---------- */
+  const pofVideo = $('.pf-video');
+  if (pofVideo && !reduced && !(navigator.connection && navigator.connection.saveData)) {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) pofVideo.play().catch(() => {}); else pofVideo.pause();
+    }, { threshold: 0.35 }).observe(pofVideo);
+  }
+
   /* ---------- Reveal ---------- */
   const revealIO = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); revealIO.unobserve(e.target); } });

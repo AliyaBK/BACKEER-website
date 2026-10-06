@@ -1028,3 +1028,58 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 
 /* phones: frame the glowing scope screen in the new hero clip */
 @media (max-width: 760px) { .hero-video { object-position: 80% 50%; } }
+
+/* ===== Two platforms: refined cards (compact, real media pair, technical notes) ===== */
+.tech-head > p:last-child { margin-top: 14px; font-size: clamp(16px, 1.25vw, 18px); }
+.tech-head { margin-bottom: clamp(32px, 3.6vw, 52px); }
+.platform { transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease); }
+.js .converge.is-in .platform:hover { border-color: var(--line-2); box-shadow: 0 1px 2px rgba(21, 25, 31, 0.05), 0 28px 52px -34px rgba(21, 25, 31, 0.38); transform: translateY(-2px); }
+.pf-copy { padding: clamp(24px, 2.6vw, 34px) clamp(28px, 3vw, 40px) clamp(18px, 1.8vw, 24px); }
+.pf-copy .kicker { margin-bottom: 10px; }
+.pf-copy p:last-child { margin-top: 10px; }
+/* both media areas share one height so the two experiments read as a pair */
+.pf-visual { height: clamp(260px, 21.5vw, 330px); background: var(--ground); }
+.pf-frame { position: absolute; top: 0; left: 30%; height: 100%; aspect-ratio: 690 / 301; min-width: 100%; transform: translateX(-30%); }
+.pf-frame .pf-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+/* technical annotations: small mono caps, thin leader, no pills */
+.pf-leaders { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.pf-leaders path { fill: none; stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; opacity: 0.75; }
+.pf-dot { position: absolute; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85); }
+.pf-note { position: absolute; font: 500 10.5px/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: rgba(255, 255, 255, 0.72); padding: 3px 5px; white-space: nowrap; }
+/* POF: the real experiment video */
+.pof-visual { display: block; padding: 0; background: var(--ground); }
+.pf-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
+/* feature row: quieter than the media */
+.pf-feats { padding-top: 18px; padding-bottom: 18px; }
+.pf-feats li { grid-template-rows: 32px auto auto; gap: 3px; transition: color 0.2s; }
+.pf-feats svg { width: 26px; height: 26px; transition: color 0.2s; }
+.pf-feats span { white-space: normal; text-wrap: balance; }
+.pf-feats li:hover svg { color: var(--cyan-ink); }
+.platform > .btn { margin-top: 2px; margin-bottom: clamp(24px, 2.6vw, 32px); height: 52px; }
+@media (max-width: 1100px) {
+  .pf-visual { height: auto; aspect-ratio: 2 / 1; }
+  .platforms { gap: 20px; }
+}
+@media (max-width: 600px) {
+  .pf-visual { aspect-ratio: 16 / 9; }
+  .pf-note { font-size: 9.5px; letter-spacing: 0.06em; }
+  .pf-feats span { font-size: 12.5px; }
+  .pf-feats b { font-size: 14px; }
+}
+/* platforms: final trims (~13% shorter than before) and one-line feature captions */
+.pf-copy { padding-top: clamp(22px, 2.4vw, 32px); padding-bottom: clamp(16px, 1.6vw, 20px); }
+.pf-visual { height: clamp(250px, 20.5vw, 296px); }
+.pf-feats { grid-template-columns: repeat(4, auto); justify-content: space-between; padding: 16px clamp(14px, 1.8vw, 26px); }
+.pf-feats li { padding: 0 clamp(6px, 0.9vw, 14px); grid-template-rows: 30px auto auto; }
+.pf-feats span { white-space: nowrap; }
+.platform > .btn { height: 50px; margin-bottom: clamp(22px, 2.2vw, 28px); }
+@media (max-width: 600px) {
+  .pf-feats { grid-template-columns: 1fr 1fr; justify-content: stretch; row-gap: 18px; }
+  .pf-feats span { white-space: normal; }
+}
+@media (max-width: 1100px) { .pf-visual { height: auto; aspect-ratio: 2 / 1; } }
+@media (max-width: 600px) { .pf-visual { aspect-ratio: 16 / 9; } }
+@media (max-width: 600px) {
+  .pf-note.n-int { left: 10% !important; }
+  .pf-note.n-smp { right: 19% !important; }
+}
