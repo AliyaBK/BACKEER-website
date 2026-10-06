@@ -994,3 +994,8 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 
 /* ===== Footer column headings in brand blue ===== */
 .foot h3 { color: var(--cyan-ink); font-weight: 600; }
+
+/* publications heading: use the full width, button stays at the right */
+.sec-head.pubs-head { grid-template-columns: 1fr auto; }
+.pubs-head h2 { max-width: none; text-wrap: wrap; }
+@media (max-width: 900px) { .sec-head.pubs-head { grid-template-columns: 1fr; } }
