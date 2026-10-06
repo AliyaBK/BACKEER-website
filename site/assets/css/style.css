@@ -869,3 +869,9 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .hero-stage { min-height: max(560px, calc(100svh - 104px)); padding-bottom: 22px; }
   .trust { padding-top: 2px; }
 }
+
+/* phones: tighter hand-off from applications to traction */
+@media (max-width: 760px) {
+  .apps.sec { padding-bottom: 20px; }
+  .traction.sec { padding-top: 32px; }
+}
