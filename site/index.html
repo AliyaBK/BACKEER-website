@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Martian+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261006173650">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261006174505">
   <script>document.documentElement.classList.replace('no-js', 'js')</script>
-  <script src="assets/js/main.js?v=20261006173438" defer></script>
+  <script src="assets/js/main.js?v=20261006174505" defer></script>
 </head>
 <body>
 
@@ -187,9 +187,16 @@
             <p>Functionalized plastic optical fiber sensors using a smartphone as the optical source, detector and analysis interface.</p>
           </div>
           <div class="pf-visual pof-visual">
-            <video class="pf-video" muted loop playsinline preload="none" poster="assets/img/hero-poster.webp?v=2" aria-label="Smartphone-read plastic optical fiber experiment in the BACKEER lab" tabindex="-1">
-              <source src="assets/video/hero.mp4?v=2" type="video/mp4">
-            </video>
+            <div class="pf-frame pof-frame">
+              <img class="pf-photo" src="assets/img/pof-setup.webp" alt="Smartphone in a 3D-printed holder connected by plastic optical fiber to the D-shaped fiber sensor in a sample cuvette, shown enlarged" width="900" height="430" loading="lazy">
+              <svg class="pf-leaders" viewBox="0 0 900 430" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M168 244 L186 72"/><path d="M380 386 L522 372"/>
+              </svg>
+              <span class="pf-dot" style="left:20.67%;top:16.74%"></span>
+              <span class="pf-dot" style="left:58%;top:86.5%"></span>
+              <span class="pf-note p-phone" style="left:9%;top:57.5%">Smartphone</span>
+              <span class="pf-note p-sensor" style="right:58.2%;top:86.5%">Fiber sensor in sample</span>
+            </div>
           </div>
           <ul class="pf-feats">
             <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 24c5 0 5-16 12-16s7 16 12 16"/><circle cx="4" cy="24" r="1.6" fill="currentColor" stroke="none"/><circle cx="28" cy="24" r="1.6" fill="currentColor" stroke="none"/></svg><b>1 mm POF</b><span>Flexible sensing fiber</span></li>

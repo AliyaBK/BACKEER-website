@@ -1083,3 +1083,8 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .pf-note.n-int { left: 10% !important; }
   .pf-note.n-smp { right: 19% !important; }
 }
+
+/* POF card: annotated setup image (same technical notes as SMF) */
+.pof-visual { background: #fff; }
+.pof-frame { left: 50%; aspect-ratio: 900 / 430; transform: translateX(-50%); }
+.p-sensor { transform: translateY(-50%); }
