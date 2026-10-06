@@ -27,19 +27,6 @@
     }
   }
 
-  if (heroVideo) {
-    // phones: reframe on the sensor during the wide fiber-rig shot (3.44–4.62 s)
-    const phoneQ = matchMedia('(max-width: 760px)');
-    const RIG = [3.44, 4.62];
-    const frame = t => heroVideo.classList.toggle('on-rig', phoneQ.matches && t >= RIG[0] && t < RIG[1]);
-    if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
-      const tick = (now, meta) => { frame(meta.mediaTime); heroVideo.requestVideoFrameCallback(tick); };
-      heroVideo.requestVideoFrameCallback(tick);
-    } else {
-      heroVideo.addEventListener('timeupdate', () => frame(heroVideo.currentTime));
-    }
-  }
-
   const menuBtn = $('.menu-btn');
   menuBtn.addEventListener('click', () => {
     const open = document.body.classList.toggle('menu-open');

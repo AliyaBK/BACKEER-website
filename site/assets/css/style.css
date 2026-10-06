@@ -1112,5 +1112,6 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .hero-video { inset: auto 0 0 0; height: 114%; }
 .hero-stage { background-position: center bottom; }
 @media (min-width: 761px) { .hero-video { object-position: 60% 100%; } }
-/* phones: fiber-rig shot framed on the sensor (toggled by main.js) */
-@media (max-width: 760px) { .hero-video.on-rig { object-position: 84% 50%; } }
+
+/* phones: a dedicated portrait cut (hero-mobile.mp4) is already framed — just fill */
+@media (max-width: 760px) { .hero-video { inset: 0; height: 100%; object-position: 50% 0%; } }
