@@ -91,18 +91,37 @@
   }, { threshold: 0.2 });
   $$('.rv, .ranges, .converge').forEach(el => revealIO.observe(el));
 
-  /* ---------- Reticle cursor ---------- */
-  const ret = $('.reticle');
-  if (matchMedia('(pointer: fine)').matches && !reduced) {
-    document.documentElement.classList.add('has-reticle');
+  /* ---------- Fiber cursor: tip = hotspot, slight bend while moving ---------- */
+  const fc = $('.fiber-cursor');
+  if (fc && matchMedia('(pointer: fine)').matches && !reduced) {
+    document.documentElement.classList.add('has-fiber');
+    const fiber = $('.fc-fiber', fc);
+    let lx = 0, ly = 0, bend = 0, target = 0, linkWas = false, raf = 0;
+    const draw = () => {
+      raf = 0;
+      bend += (target - bend) * 0.25;           // ease the bend back to straight
+      target *= 0.6;
+      fiber.setAttribute("d", `M2.5 5.6 Q10 ${(8.4 + bend).toFixed(2)} 17.5 10`);
+      if (Math.abs(bend) > 0.02 || Math.abs(target) > 0.02) raf = requestAnimationFrame(draw);
+    };
     addEventListener('pointermove', e => {
-      ret.style.setProperty('--x', e.clientX + 'px'); ret.style.setProperty('--y', e.clientY + 'px');
-      ret.classList.remove('is-out');
+      const x = e.clientX, y = e.clientY;
+      fc.style.setProperty('--x', x + 'px');
+      fc.style.setProperty('--y', y + 'px');
+      // very slight natural bend (max ~1.2px) from vertical movement
+      target = Math.max(-1.2, Math.min(1.2, (y - ly) * 0.08));
+      lx = x; ly = y;
+      if (!raf) raf = requestAnimationFrame(draw);
+      fc.classList.remove('is-out');
       const t = e.target;
-      ret.classList.toggle('is-link', !!t.closest('a, button'));
-      ret.classList.toggle('is-dark', !!t.closest('.traction, figure.dark'));
+      const link = !!t.closest('a, button, [role="tab"], summary, label');
+      fc.classList.toggle('is-link', link);
+      if (link && !linkWas) { fc.classList.remove('ping'); void fc.getBoundingClientRect(); fc.classList.add('ping'); }
+      linkWas = link;
+      fc.classList.toggle('is-dark', !!t.closest('.hero-stage, .traction, figure.dark, .header.on-video'));
     }, { passive: true });
-    document.addEventListener('pointerleave', () => ret.classList.add('is-out'));
+    document.addEventListener('pointerleave', () => fc.classList.add('is-out'));
+    addEventListener('blur', () => fc.classList.add('is-out'));
   }
 
   /* ---------- How it works: scroll-scrubbed zoom ---------- */

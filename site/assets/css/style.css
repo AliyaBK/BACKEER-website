@@ -921,3 +921,36 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
   .contact { padding-top: 16px; }
 }
 @media (max-width: 760px) { .pubs.sec.is-open { padding-bottom: 28px; } }
+
+/* ===== Fiber cursor: cyan sensing tip is the hotspot, ~20px total ===== */
+.fiber-cursor { display: none; }
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .has-fiber, .has-fiber * { cursor: none !important; }
+  .has-fiber input, .has-fiber textarea { cursor: text !important; }
+  .fiber-cursor {
+    display: block; position: fixed; left: 0; top: 0; z-index: 1000; pointer-events: none; overflow: visible;
+    /* the tip centre (20,10) lands exactly on the pointer */
+    transform: translate3d(calc(var(--x, -100px) - 20px), calc(var(--y, -100px) - 10px), 0);
+    transition: opacity 0.2s;
+  }
+  .fiber-cursor.is-out { opacity: 0; }
+  .fc-s0 { stop-color: #15191f; stop-opacity: 0; }
+  .fc-s1 { stop-color: #15191f; stop-opacity: 0.45; }
+  .fc-s2 { stop-color: #15191f; stop-opacity: 0.85; transition: stop-color 0.25s; }
+  .fc-s3 { stop-color: #15191f; stop-opacity: 0.95; transition: stop-color 0.25s; }
+  .fc-tip { fill: #1aa6d0; transform-box: fill-box; transform-origin: center; transition: transform 0.2s var(--ease), fill 0.2s; }
+  .fc-ring { fill: none; stroke: #1aa6d0; stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; }
+  /* on dark backgrounds (hero video, traction band) the fiber turns light */
+  .fiber-cursor.is-dark .fc-s1, .fiber-cursor.is-dark .fc-s2, .fiber-cursor.is-dark .fc-s3 { stop-color: #e8eef5; }
+  /* hover: fiber length unchanged; tip brightens (5 -> 6px), last pixels go cyan, one ring pulse */
+  .fiber-cursor.is-link .fc-s2, .fiber-cursor.is-link .fc-s3 { stop-color: #1aa6d0; }
+  .fiber-cursor.is-link .fc-tip { fill: #2fc4ee; transform: scale(1.2); }
+  .fiber-cursor.ping .fc-ring { animation: fc-ping 0.6s var(--ease) forwards; }
+  @keyframes fc-ping {
+    0% { opacity: 0.75; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2.9); }
+  }
+  /* the old crosshair is retired */
+  .reticle { display: none !important; }
+  .has-reticle, .has-reticle * { cursor: none; }
+}
