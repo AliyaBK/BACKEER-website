@@ -809,3 +809,19 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .zoom-copy h2.lines { max-width: none; font-size: clamp(32px, 4.1vw, 62px); }
 .zoom-copy h2.lines span { display: block; white-space: nowrap; }
 @media (max-width: 420px) { .zoom-copy h2.lines span { white-space: normal; } }
+
+/* tighter vertical rhythm between all sections */
+.sec { padding-top: clamp(48px, 4.6vw, 68px); padding-bottom: clamp(48px, 4.6vw, 68px); }
+.contact { padding: clamp(56px, 5.5vw, 84px) 0; }
+.sec-head { margin-bottom: clamp(28px, 3.2vw, 48px); }
+.need.sec { padding-top: clamp(40px, 4.6vw, 64px); padding-bottom: clamp(28px, 3vw, 40px); }
+.next-sec { margin-top: clamp(24px, 3vw, 40px); }
+.tech.sec { padding-top: clamp(40px, 4vw, 56px); padding-bottom: clamp(40px, 4vw, 60px); }
+.apps-title { margin-bottom: clamp(28px, 3.2vw, 44px); }
+
+/* bullets share the medal's 20px column so icons and text line up */
+.trust .marquee-track.bullets li::before,
+.trust .marquee-track.bullets li + li::before { width: 20px; height: 20px; border-radius: 0; margin: 0 10px 0 0; background: radial-gradient(circle at center, var(--cyan) 0 3.5px, transparent 4px); }
+/* Jas Ventures logo sized to match the NU / NLA lockup */
+.trust .marquee-track img[src*="logo-jas"] { height: 56px; }
+@media (max-width: 600px) { .trust .marquee-track img[src*="logo-jas"] { height: 48px; } }
