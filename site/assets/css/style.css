@@ -999,3 +999,29 @@ body:not(.menu-open) .header.on-video .nav a:hover { color: #8be6ff; background:
 .sec-head.pubs-head { grid-template-columns: 1fr auto; }
 .pubs-head h2 { max-width: none; text-wrap: wrap; }
 @media (max-width: 900px) { .sec-head.pubs-head { grid-template-columns: 1fr; } }
+
+/* ===== Desktop: section padding ~13% tighter (hero unchanged) ===== */
+@media (min-width: 761px) {
+  .need.sec { padding-top: clamp(36px, 4vw, 56px); padding-bottom: clamp(26px, 2.6vw, 35px); }
+  .tech.sec { padding-top: clamp(36px, 3.5vw, 49px); padding-bottom: clamp(36px, 3.5vw, 50px); }
+  .cost.sec { padding-top: clamp(28px, 3vw, 42px); padding-bottom: clamp(28px, 3vw, 42px); }
+  .apps.sec { padding-top: clamp(28px, 3vw, 42px); padding-bottom: clamp(28px, 3vw, 42px); }
+  .traction.sec { padding-top: clamp(32px, 3.1vw, 45px); padding-bottom: clamp(28px, 3vw, 42px); }
+  .pubs.sec { padding-top: clamp(28px, 3vw, 42px); padding-bottom: clamp(36px, 3.6vw, 52px); }
+  .sec-head { margin-bottom: clamp(24px, 2.8vw, 42px); }
+  .apps-title { margin-bottom: clamp(24px, 2.8vw, 38px); }
+}
+/* contact band removed: publications hand straight off to the footer */
+@media (max-width: 760px) { .pubs.sec { padding-bottom: 32px; } }
+
+/* footer: shared email under the tagline */
+.foot-mail { display: inline-block; margin-top: 14px; font: 600 16px/1.3 var(--f-sans); color: var(--cyan-ink); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.foot-mail:hover { color: var(--ink); }
+
+/* ===== Fiber cursor: shorter, thinner, quieter tail on light sections ===== */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .fc-s1 { stop-opacity: 0.28; }
+  .fc-s2 { stop-opacity: 0.55; }
+  .fc-s3 { stop-opacity: 0.65; }
+  .fiber-cursor.is-dark .fc-s2, .fiber-cursor.is-dark .fc-s3 { stop-opacity: 0.85; }
+}

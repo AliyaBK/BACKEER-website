@@ -101,7 +101,7 @@
       raf = 0;
       bend += (target - bend) * 0.25;           // ease the bend back to straight
       target *= 0.6;
-      fiber.setAttribute("d", `M9 12 Q${(11 + bend).toFixed(2)} 19.5 15 27`);
+      fiber.setAttribute("d", `M9 12 Q${(10.3 + bend).toFixed(2)} 17 12.9 21.7`);
       if (Math.abs(bend) > 0.02 || Math.abs(target) > 0.02) raf = requestAnimationFrame(draw);
     };
     addEventListener('pointermove', e => {
@@ -118,7 +118,7 @@
       fc.classList.toggle('is-link', link);
       if (link && !linkWas) { fc.classList.remove('ping'); void fc.getBoundingClientRect(); fc.classList.add('ping'); }
       linkWas = link;
-      fc.classList.toggle('is-dark', !!t.closest('.hero-stage, .traction, .contact, figure.dark, .header.on-video'));
+      fc.classList.toggle('is-dark', !!t.closest('.hero-stage, .traction, figure.dark, .header.on-video'));
     }, { passive: true });
     document.addEventListener('pointerleave', () => fc.classList.add('is-out'));
     addEventListener('blur', () => fc.classList.add('is-out'));
